@@ -1,0 +1,627 @@
+
+	
+	.appHeader {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: env(safe-area-inset-top);
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #222;
+  color: #ccc;
+	border:0;
+}
+
+.appHeader:before {
+  content: '';
+  height: env(safe-area-inset-top);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 99999;
+  background: #1E74FD;
+}
+
+.appHeader.no-border {
+  border: 0;
+  box-shadow: none;
+}
+
+.appHeader.transparent {
+  background: transparent;
+  box-shadow: none;
+}
+
+.appHeader .left,
+.appHeader .right {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+.appHeader .left a i,
+.appHeader .right a i {
+	color:#eee;
+	font-size:24px;
+}
+
+.appHeader .left i.icon,
+.appHeader .left ion-icon,
+.appHeader .right i.icon,
+.appHeader .right ion-icon {
+  font-size: 26px;
+  --ionicon-stroke-width: 36px;
+}
+
+.appHeader .left .headerButton,
+.appHeader .right .headerButton {
+  min-width: 36px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  color: #141515;
+  position: relative;
+}
+
+.appHeader .left .headerButton .btn,
+.appHeader .right .headerButton .btn {
+  font-size: 16px;
+  height: 32px;
+  padding: 0px 14px;
+  font-weight: 400;
+}
+
+.appHeader .left .headerButton:active,
+.appHeader .right .headerButton:active {
+  opacity: 0.6;
+}
+
+.appHeader .left {
+  left: 8px;
+  top: 0;
+}
+
+.appHeader .right {
+  right: 8px;
+  top: 0;
+}
+
+.appHeader .pageTitle {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+.appHeader .pageTitle .logo {
+  max-height: 18px;
+}
+
+.appHeader.text-light {
+  color: #fff;
+}
+
+.appHeader.text-light .headerButton,
+.appHeader.text-light .pageTitle {
+  color: #fff;
+}
+
+.appHeader.bg-primary, .appHeader.bg-secondary, .appHeader.bg-success, .appHeader.bg-warning, .appHeader.bg-danger, .appHeader.bg-info, .appHeader.bg-light, .appHeader.bg-dark {
+  border: 0;
+}
+.appHeader.scrolled {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  height: 0;
+  transition: 0.1s all;
+}
+
+.appHeader.scrolled .pageTitle {
+  opacity: 0;
+}
+
+.appHeader.scrolled.is-active {
+  background: #FFF;
+  min-height: 50px;
+  border-bottom-color: #E1E1E1;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+.appHeader.scrolled.is-active .pageTitle {
+  opacity: 1;
+}
+
+.appHeader.scrolled.bg-primary {
+  background: transparent !important;
+  border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-primary .headerButton {
+  color: #1E74FD;
+}
+
+.appHeader.scrolled.bg-primary.is-active {
+  background: #1E74FD !important;
+}
+
+.appHeader.scrolled.bg-primary.is-active .headerButton {
+  color: #FFF !important;
+}
+
+.appHeader.scrolled.bg-secondary {
+  background: transparent !important;
+  border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-secondary .headerButton {
+  color: #6C7C94;
+}
+
+.appHeader.scrolled.bg-secondary.is-active {
+  background: #6C7C94 !important;
+}
+
+.appHeader.scrolled.bg-secondary.is-active .headerButton {
+  color: #FFF !important;
+}
+
+.appHeader.scrolled.bg-success {
+  background: transparent !important;
+  border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-success .headerButton {
+  color: #34C759;
+}
+
+.appHeader.scrolled.bg-success.is-active {
+  background: #34C759 !important;
+}
+
+.appHeader.scrolled.bg-success.is-active .headerButton {
+  color: #FFF !important;
+}
+
+.appHeader.scrolled.bg-danger {
+  background: transparent !important;
+  border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-danger .headerButton {
+  color: #EC4433;
+}
+
+.appHeader.scrolled.bg-danger.is-active {
+  background: #EC4433 !important;
+}
+
+.appHeader.scrolled.bg-danger.is-active .headerButton {
+  color: #FFF !important;
+}
+
+.appHeader.scrolled.bg-warning {
+  background: transparent !important;
+  border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-warning .headerButton {
+  color: #FE9500;
+}
+
+.appHeader.scrolled.bg-warning.is-active {
+  background: #FE9500 !important;
+}
+
+.appHeader.scrolled.bg-warning.is-active .headerButton {
+  color: #FFF !important;
+}
+
+.appHeader.scrolled.bg-info {
+  background: transparent !important;
+  border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-info .headerButton {
+  color: #592BCA;
+}
+
+.appHeader.scrolled.bg-info.is-active {
+  background: #592BCA !important;
+}
+
+.appHeader.scrolled.bg-info.is-active .headerButton {
+  color: #FFF !important;
+}
+
+.appHeader.scrolled.bg-dark {
+  background: transparent !important;
+  border-bottom: 0 !important;
+}
+
+.appHeader.scrolled.bg-dark .headerButton {
+  color: #000;
+}
+
+.appHeader.scrolled.bg-dark.is-active {
+  background: #000 !important;
+}
+
+.appHeader.scrolled.bg-dark.is-active .headerButton {
+  color: #FFF !important;
+}
+.appHeader .badge {
+  min-width: 16px;
+  height: 16px;
+  line-height: 9px !important;
+  font-size: 10px;
+  padding: 0 4px !important;
+  position: absolute;
+  right: 2px;
+  top: 10px;
+}
+
+.appHeader .badge-empty {
+  top: 14px;
+}
+.appHeader .dropdown-menu {
+  margin-top: -10px;
+}
+
+.appBottomMenu {
+  min-height: 50px;
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.appBottomMenu.no-border {
+  border: 0 !important;
+  box-shadow: 0 !important;
+}
+
+.appBottomMenu.rounded {
+  border-radius: 24px 24px 0 0 !important;
+}
+
+.appBottomMenu.rounded .item:before {
+  display: none;
+}
+
+.appBottomMenu {
+	background:#222;
+	padding:0
+}
+.appBottomMenu .item {
+	background:#222;
+	xborder-bottom:5px solid #000;
+}
+.appBottomMenu .item {
+  font-size: 18px;
+	font-weight:500;
+  letter-spacing: 0;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  xline-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.appBottomMenu .item:hover {
+	xborder-bottom:5px solid red;
+	background:#444;
+}
+
+.appBottomMenu .item:before {
+  content: '';
+  display: block;
+  height: 2px;
+  border-radius: 0 0 10px 10px;
+  background: transparent;
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 0;
+}
+
+.appBottomMenu .item .col {
+  width: 100%;
+  padding: 0 4px;
+  text-align: center;
+}
+
+.appBottomMenu .item i.icon,
+.appBottomMenu .item ion-icon {
+  display: inline-flex;
+  margin: 1px auto 3px auto;
+  font-size: 26px;
+  line-height: 1em;
+  color: #141515;
+  transition: 0.1s all;
+  display: block;
+  margin-top: 1px;
+  margin-bottom: 3px;
+}
+
+.appBottomMenu .item .col i {
+  font-size: 30px;
+  line-height: 50px;
+  color: #eee;
+  transition: 0.1s all;
+  display: block;
+  margin:0;
+}
+.appBottomMenu .item .col img {
+  display:inline-block;
+	height:30px;
+	border-radius:2px;
+	
+}
+
+.appBottomMenu .item .action-button {
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  margin-left: -5px;
+  margin-right: -5px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 200px;
+  background: #1E74FD;
+}
+
+.appBottomMenu .item .action-button.large {
+  width: 60px;
+  height: 60px;
+  margin-top: -20px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.appBottomMenu .item .action-button i.icon,
+.appBottomMenu .item .action-button ion-icon {
+  color: #FFF !important;
+  margin: 0 !important;
+  line-height: 0 !important;
+}
+
+.appBottomMenu .item strong {
+  margin-top: 4px;
+  display: block;
+  color: #141515;
+  font-weight: 400;
+  transition: 0.1s all;
+}
+
+.appBottomMenu .item:active {
+  opacity: .8;
+}
+
+.appBottomMenu .item.active:before {
+  background: transparent;
+}
+
+.appBottomMenu .item.active i.icon,
+.appBottomMenu .item.active ion-icon,
+.appBottomMenu .item.active strong {
+  color: #1E74FD !important;
+  font-weight: 500;
+}
+
+.appBottomMenu .item:hover i.icon,
+.appBottomMenu .item:hover ion-icon,
+.appBottomMenu .item:hover strong {
+  color: #141515;
+}
+
+.appBottomMenu.text-light {
+  color: #FFF;
+}
+
+.appBottomMenu.text-light .item {
+  color: #FFF;
+  opacity: 1;
+}
+
+.appBottomMenu.text-light .item i.icon,
+.appBottomMenu.text-light .item ion-icon,
+.appBottomMenu.text-light .item strong {
+  color: #FFF;
+}
+
+.appBottomMenu.text-light .item.active {
+  opacity: 1;
+}
+
+.appBottomMenu.text-light .item.active i.icon,
+.appBottomMenu.text-light .item.active ion-icon,
+.appBottomMenu.text-light .item.active strong {
+  color: #FFF !important;
+}
+
+.appBottomMenu.bg-primary, .appBottomMenu.bg-secondary, .appBottomMenu.bg-success, .appBottomMenu.bg-warning, .appBottomMenu.bg-danger, .appBottomMenu.bg-info, .appBottomMenu.bg-light, .appBottomMenu.bg-dark {
+  border: 0;
+}
+
+.appBottomMenu.bg-primary .item:before, .appBottomMenu.bg-secondary .item:before, .appBottomMenu.bg-success .item:before, .appBottomMenu.bg-warning .item:before, .appBottomMenu.bg-danger .item:before, .appBottomMenu.bg-info .item:before, .appBottomMenu.bg-light .item:before, .appBottomMenu.bg-dark .item:before {
+  display: none;
+}
+
+.profile-header {
+	background:#f6f6f6;
+	padding:20px 20px 15px;
+}
+.profile-header img {
+	display:block;
+	margin:0 auto;
+	border-radius:50%;
+	border:10px solid rgba(0,0,0,0.2);
+	width:200px;
+	height:200px;
+}
+.profile-header h3 {
+	font-size:20px;
+	font-weight:500;
+	text-align:center;
+	color:#333;
+	padding:10px 0 0;
+	margin:0;
+}
+.profile-header em {
+	font-size:17px;
+	display:block;
+	font-weight:500;
+	text-align:center;
+	color:#777;
+	padding:0;
+	font-style:normal;
+}
+.dashboard ul li:last-child{
+    xmargin-bottom:0px;
+}
+.dashboard ul {
+  margin:0px;
+  padding:5px;
+}
+.dashboard ul li {
+    list-style:none;
+    margin:0;
+    width:50%;
+    float:left;
+		xborder:1px solid green;
+		padding:4px;
+		margin:0;
+}
+.dashboardwidth ul li {
+    list-style:none;
+    margin:0;
+    width:100%!important;
+    float:left;
+    xborder:1px solid green;
+    padding:4px;
+    margin:0;
+}
+.dashboard ul li.disabled {
+		xbackground:#ccc;
+		opacity:0.3;
+}
+.dashboard ul li a {
+    padding-top:12px;
+		display:block;
+		background:#999;
+		color:#fff;
+		border-radius:3px;
+		height:90px;
+		text-align:center;
+		border-bottom:6px solid rgba(255,255,255,.3);
+}
+
+.dashboard ul li a i {
+    font-size:34px;
+    text-align:center;
+    display:block;
+    color:#fff;
+}
+
+.dashboard ul li a i:hover{
+    -moz-transform: scale(1.1, 1.1);
+    -webkit-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+    -webkit-transition: all 150ms ease;
+    -moz-transition: all 150ms ease;
+    -ms-transition: all 150ms ease;
+    -o-transition: all 150ms ease;
+    transition: all 150ms ease;
+}
+
+.dashboard ul li a em{
+    display:block;
+    font-size:15px;
+    color:#fff;
+    font-style:normal;
+    text-align:center;
+    padding-top:5px;
+    font-weight:400;
+}
+
+.dashboard ul li.timeScan {
+	width:100%;
+}
+.dashboard ul li.timeScan a {
+    padding:10px 10px 6px;
+		height:auto;
+}
+.dashboard ul li.timeScan a .inner {
+    padding:10px 0 10px 40px;
+		font-size:20px;
+		display:inline-block;
+		position:relative
+}
+.dashboard ul li.timeScan a .inner i {
+	position:absolute;
+	top:5px;
+	left:0;
+}
+
+.bg-teal-light{ background-color: #1abc9c!important;}
+.bg-teal-dark{  background-color: #16a085!important;}
+
+.bg-green-light{background-color: #2ecc71!important;}
+.bg-green-dark{background-color: #2abb67!important;}
+
+.bg-blue-light{background-color: #3498db!important;}
+.bg-blue-dark{background-color: #2980b9!important;}
+
+.bg-magenta-light{background-color: #9b59b6!important;}
+.bg-magenta-dark{background-color: #8e44ad!important;}
+
+.bg-night-light{background-color: #34495e!important;}
+.bg-night-dark{background-color: #2c3e50!important;}
+
+.bg-yellow-light{background-color: #E67E22!important;}
+.bg-yellow-dark{background-color: #F27935!important;}
+
+.bg-orange-light{background-color: #F9690E!important;}
+.bg-orange-dark{background-color: #D35400!important;}
+
+.bg-red-light{background-color: #e74c3c!important;}
+.bg-red-dark{background-color: #c0392b!important;}
+
+.bg-gray-light{background-color: #bdc3c7!important;}
+.bg-gray-dark{background-color: #95a5a6!important;}
+
+.bg-gray-eee{background-color: #f9f9f9!important;}
+
+.bg-white{background-color:#FFFFFF;}
+.color-white{color:#FFFFFF;}
+
+.bg-black{background-color:#000000;}
+.bg-black-light{background-color:#333333;}
+.color-black{color:#000000;}
+
+.tab-pane div.inner {
+    color: #fff;
+     background: none; 
+   
+}
+
